@@ -13,7 +13,7 @@ body {
 .header img {
     width: 100%;
 }
-.header .more_inf {
+.header .header-link {
     font-family: fantasy, cursive;
 }
 
@@ -26,13 +26,14 @@ body {
     width: 500px;
     margin: 0 auto 0;
 }
-.task {
+.search-line, .search-line__text {
     width: 56%;
     display: inline-block;
     flex-grow: 1
 }
-.task-row-wrapper {
+.add-item__search-line {
     display: flex;
+    margin-top: 20px;
 }
 ul {
     margin:0;
@@ -67,7 +68,7 @@ h3,
     margin: 0;
     text-transform: uppercase;
 }
-input[type="text"] {
+.search-line {
     margin: 0;
     font-size: 18px;
     line-height: 18px;
@@ -79,17 +80,8 @@ input[type="text"] {
     font-family: Lato, sans-serif;
     color: #888;
 }
-input[type="text"]:focus {
+.search-line:focus {
     color: #333;
-}
-
-/* New Task */
-label[for='new-task'] {
-    display: block;
-    margin: 0 0 20px;
-}
-input#new-task {
-    width: 318px;
 }
 
 /* Task list */
@@ -97,7 +89,6 @@ li {
     overflow: hidden;
     padding: 20px 0;
     border-bottom: 1px solid #eee;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -106,43 +97,43 @@ li > * {
     vertical-align: middle;
 }
 
-li > input[type="checkbox"] {
+li > .checkbox {
     margin: 0 10px;
 }
-li > label {
+li > .search-line__text {
     padding-left: 10px;
     box-sizing: border-box;
     font-size: 18px;
     width: 226px;
 }
-li >    input[type="text"] {
+li >    .search-line {
     width: 226px
 }
-button.delete img {
+.delete__img {
     height: 2em;
     transform: rotateZ(45deg);
     transition: transform 200ms ease-in;
 }
-button.delete img:hover {
+.delete__img:hover {
     transform: rotateZ(0);
 }
 
 /* Completed */
-ul#completed-tasks label {
-    text-decoration: line-through
+#content-completed label {
+    text-decoration: line-through;
     color: #888;
 }
 
 /* Edit Task */
-ul li input[type=text] {
+ul li .search-line {
     display:none
 }
 
-ul li.editMode input[type=text] {
+ul .content-todo__line .search-line {
     display:inline-block;
-    width:224px
+    width: 224px
 }
 
-ul li.editMode label {
+ul .content-todo__line .search-line__text {
     display:none;
 }
